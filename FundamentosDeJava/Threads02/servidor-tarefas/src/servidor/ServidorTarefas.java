@@ -7,20 +7,20 @@ import java.net.SocketException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ServidorTarefas{
     private ServerSocket servidor;
     private ExecutorService threadPool;
     private Socket socket;
-    private boolean estaRodando;
+    private AtomicBoolean estaRodando;
 
     public ServidorTarefas() {
         System.out.println("Iniciando servidor...");
         try {
             this.servidor = new ServerSocket(12345);
             this.threadPool = Executors.newCachedThreadPool();
-            this.estaRodando = true;
-
+            this.estaRodando = new AtomicBoolean(true);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             throw new RuntimeException(e);
@@ -29,7 +29,7 @@ public class ServidorTarefas{
     }
 
     private void roda(){
-        while(this.estaRodando){
+        while(this.estaRodando.get()){
             try {
                 socket = this.servidor.accept();
                 System.out.println("Aceitando novo cliente na porta " + socket.getPort());
@@ -52,7 +52,7 @@ public class ServidorTarefas{
     public void parar() {
         try {
             System.out.println("Parando...");
-            this.estaRodando = false;
+            this.estaRodando.set(false);
             servidor.close();
             threadPool.shutdown();
         } catch (IOException e) {
@@ -67,7 +67,6 @@ public class ServidorTarefas{
         ServidorTarefas servidor = new ServidorTarefas();
 
         servidor.roda();
-        servidor.parar();
 
 
         

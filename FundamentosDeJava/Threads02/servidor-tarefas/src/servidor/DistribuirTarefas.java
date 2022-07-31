@@ -36,7 +36,9 @@ public class DistribuirTarefas implements Runnable {
                         break;
                     }
                     case "fim":{
+                        System.out.println("Desligando servidor...");
                         servidor.parar();
+                        return;
                     }
                     default:{
                         respostaServidor.println("Comando não reconhecido.");
