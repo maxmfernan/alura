@@ -19,7 +19,7 @@ public class ServidorTarefas{
         System.out.println("Iniciando servidor...");
         try {
             this.servidor = new ServerSocket(12345);
-            this.threadPool = Executors.newCachedThreadPool();
+            this.threadPool = Executors.newCachedThreadPool(new FabricaDeThreads());
             this.estaRodando = new AtomicBoolean(true);
         } catch (IOException e) {
             // TODO Auto-generated catch block
@@ -34,7 +34,7 @@ public class ServidorTarefas{
                 socket = this.servidor.accept();
                 System.out.println("Aceitando novo cliente na porta " + socket.getPort());
     
-                DistribuirTarefas distribuirTarefas = new DistribuirTarefas(socket, this);
+                DistribuirTarefas distribuirTarefas = new DistribuirTarefas(this.threadPool, socket, this);
     
                 threadPool.execute(distribuirTarefas);
             } catch( SocketException e ){

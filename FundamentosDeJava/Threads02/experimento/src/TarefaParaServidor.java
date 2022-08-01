@@ -1,9 +1,9 @@
-public class TarefaPararServidor implements Runnable {
+public class TarefaParaServidor implements Runnable {
 
     private ServidorDeTeste servidor;
 
     //recebendo o servidor como parametro
-    public TarefaPararServidor(ServidorDeTeste servidor) {
+    public TarefaParaServidor(ServidorDeTeste servidor) {
         this.servidor = servidor;
     }
 
