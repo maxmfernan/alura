@@ -16,7 +16,7 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.logging.Logger;
 
 import br.com.alura.model.Post;
-import br.com.alura.service.BitcoinService;
+import br.com.alura.service.consumidas.BitcoinService;
 
 @Path("/bitcoins")
 public class BitcoinResource {

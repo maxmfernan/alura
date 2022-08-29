@@ -1,4 +1,4 @@
-package br.com.alura.service;
+package br.com.alura.service.consumidas;
 
 import java.util.List;
 
