@@ -1,3 +1,7 @@
+Url com apis para testar:
+https://www.appsloveworld.com/sample-rest-api-url-for-testing-with-authentication
+
+
 # bitcoin Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
