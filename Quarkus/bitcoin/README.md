@@ -1,6 +1,8 @@
 Url com apis para testar:
 https://www.appsloveworld.com/sample-rest-api-url-for-testing-with-authentication
 
+url para fazer o mapeamento
+https://stackoverflow.com/questions/60008540/quarkus-exception-handler
 
 # bitcoin Project
 

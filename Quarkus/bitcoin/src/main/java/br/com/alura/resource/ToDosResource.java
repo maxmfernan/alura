@@ -1,24 +1,16 @@
 package br.com.alura.resource;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.GenericEntity;
-import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.logging.Logger;
 
-import br.com.alura.model.ListaResultadoToDo;
-import br.com.alura.model.ResultadoToDo;
 import br.com.alura.model.ToDo;
 import br.com.alura.service.consumidas.ToDosService;
 

@@ -10,8 +10,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
-import org.jboss.logging.annotations.Param;
-import org.jboss.resteasy.annotations.Body;
 
 import br.com.alura.model.Post;
 
