@@ -1,24 +1,24 @@
 package br.com.alura.exceptions;
 
 public class TesteException extends RuntimeException{
+
+    private Error error;
     public TesteException() {
     }
 
-    public TesteException(String message) {
-        super(message);
+    public TesteException(Error error) {
+        super(error.getMensagem());
+        this.error = error;
+        
     }
 
-    public TesteException(String message, Throwable cause) {
-        super(message, cause);
+    public Error getError() {
+        return error;
     }
 
-    public TesteException(Throwable cause) {
-        super(cause);
-    }
 
-    public TesteException(String message, Throwable cause, 
-                           boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
+
+
+    
 
 }
